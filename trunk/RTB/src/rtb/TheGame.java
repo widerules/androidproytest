@@ -24,19 +24,19 @@ public class TheGame {
 	public void update(long time){ /* Its not really that long*/
 		ballpos.offset(balldir.x/50, balldir.y/50);
 		if (!phoneres.contains(ballpos.x, ballpos.y)){
-			if (ballpos.x > phoneres.right) {
+			if (ballpos.x+radio > phoneres.right) {
 				ballpos.x = phoneres.right - (ballpos.x - phoneres.right);
 				balldir.x *= -1; 
 			}
-			if (ballpos.x < phoneres.left) {
+			if (ballpos.x-radio < phoneres.left) {
 				ballpos.x *= -1;
 				balldir.x *= -1; 
 			}
-			if (ballpos.y > phoneres.bottom) {
+			if (ballpos.y-radio > phoneres.bottom) {
 				ballpos.y = phoneres.bottom - (ballpos.y - phoneres.bottom);
 				balldir.y *= -1; 
 			}
-			if (ballpos.y < phoneres.top) {
+			if (ballpos.y+radio < phoneres.top) {
 				ballpos.y *= -1;
 				balldir.y *= -1; 
 			}
